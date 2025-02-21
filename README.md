@@ -1,6 +1,6 @@
 # Bannerlord Mod for Creating Batch Items
 
-![Bannerlord]([https://example.com/bannerlord-banner.png](https://www.pcgamesn.com/wp-content/sites/pcgamesn/2019/03/mount-and-blade-2-bannerlord-closed-beta.jpg))
+![Bannerlord](https://www.pcgamesn.com/wp-content/sites/pcgamesn/2019/03/mount-and-blade-2-bannerlord-closed-beta.jpg)
 
 [![GitHub release](https://img.shields.io/github/v/release/yourusername/bannerlord-batch-mod)](https://github.com/yourusername/bannerlord-batch-mod/releases)
 [![License](https://img.shields.io/github/license/yourusername/bannerlord-batch-mod)](https://github.com/yourusername/bannerlord-batch-mod/blob/main/LICENSE)
