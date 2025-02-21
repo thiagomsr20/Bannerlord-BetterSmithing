@@ -22,7 +22,6 @@ To solve this issue, I researched mod development for the game and discovered th
 ## ✨ Features
 - ❌ **Batch crafting** of items (Working on)
 - ❌ **Batch melting** of weapons (Working on)
-- ❌ **Improved gameplay flow** (Working on)
 - ✅ **No energy cost to Smithing**
 
 ## 📥 Installation
