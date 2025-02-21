@@ -1,5 +1,21 @@
-<h1>Bannerlord Mod for Creating Batch Items</h1>
+Bannerlord Mod for Creating Batch Items
 
-Eu gosto de games com a temática medieval, Mount and Blade: Warband foi o melhor game que já joguei com essa temática, seu sucessor Mount and Blade: Bannerlord, tem sido um dos meus games favoritos. Uma das inúmeras mecânicas do jogo é possuir um sistema de Smithing, onde você poder fabricar armas, refinar metais ou derreter armas adquiridas de espólios de guerra ou compradas no mercado das cidades.
-A dor que percebi é que quando se derrete ou fabrica um pequeno número de equipamentos, não tem problema pressionar uma vez para executar a ação em um por um dos itens a cada clique, o botão de Craft para fabricar ou o de Melt para derreter o equipamento, o problema vem quando se quer fazer MUIIITOS itens ou derreter MUIIITOOS itens. O game em si não possui uma funcionalidade que permite segurar CTRL + o click nos botões para executar tudo de uma vez (deveria ter, afinal é bem básico).
-Esse problema deixava minha gameplay chata, pois meu personagem fazia a Roleplay de um ferreiro, então eu fabricava muitos equipamentos ou derretia muitos para extrair os materiais. Sendo assim dei uma pesquisada sobre alguma Doc para desenvolver Mods para o game, e descobri que se usa o meu queridinho C# para tal, sendo assim parti na busca de como criar um mod e publicá-lo na Steam para poder tornar meu game mais fluído.
+Introduction
+
+I have always loved medieval-themed games, and Mount & Blade: Warband was the best game I have ever played in this genre. Its successor, Mount & Blade: Bannerlord, has quickly become one of my favorites.
+
+One of the many mechanics in the game is the Smithing system, which allows you to craft weapons, refine metals, or melt down weapons obtained as loot or purchased from city markets.
+
+The Problem
+
+When crafting or melting a small number of items, clicking once per item to execute the action is not a big deal. However, the issue arises when you need to craft or melt a large number of items. The game does not offer a functionality to hold CTRL + click to execute multiple actions at once (which, honestly, it should, as this is a basic feature).
+
+This problem made my gameplay frustrating, as my character played the role of a blacksmith, meaning I frequently crafted or melted down many items to extract materials.
+
+The Solution
+
+To solve this issue, I researched mod development for the game and discovered that it uses my favorite language, C#. Motivated by this, I started learning how to create a mod and publish it on Steam, making my gameplay experience much smoother and more enjoyable.
+
+This mod was created to improve the smithing experience in Bannerlord by allowing batch crafting and melting of items, eliminating the need for excessive clicking.
+
+Stay tuned for updates and improvements!
