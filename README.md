@@ -1,6 +1,6 @@
 # Bannerlord Mod for Better Smithing
-[![GitHub release](https://img.shields.io/github/v/release/yourusername/bannerlord-batch-mod)](https://github.com/yourusername/bannerlord-batch-mod/releases)
-[![License](https://img.shields.io/github/license/yourusername/bannerlord-batch-mod)](https://github.com/yourusername/bannerlord-batch-mod/blob/main/LICENSE)
+[![GitHub release](https://img.shields.io/github/v/release/thiagomsr20/bannerlord-batch-mod)](https://github.com/thiagomsr20/Bannerlord-BetterSmithing/releases)
+[![License](https://img.shields.io/github/license/thiagomsr20/bannerlord-batch-mod)](https://github.com/thiagomsr20/Bannerlord-BetterSmithing/blob/main/LICENSE)
 
 ![Bannerlord](https://i.redd.it/knctfjvce4q41.png)
 
