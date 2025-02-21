@@ -1,4 +1,4 @@
-# Bannerlord Mod for Creating Batch Items
+# Bannerlord Mod for Better Smithing
 [![GitHub release](https://img.shields.io/github/v/release/yourusername/bannerlord-batch-mod)](https://github.com/yourusername/bannerlord-batch-mod/releases)
 [![License](https://img.shields.io/github/license/yourusername/bannerlord-batch-mod)](https://github.com/yourusername/bannerlord-batch-mod/blob/main/LICENSE)
 
@@ -34,6 +34,6 @@ To solve this issue, I researched mod development for the game and discovered th
 Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
 
 ---
-Stay tuned for updates and improvements! 🚀
+Stay tuned for updates and improvements! 🚀 Connect with me over [Steam](https://steamcommunity.com/profiles/76561198854122954/)
 
 ![Bannerlord](https://www.pcgamesn.com/wp-content/sites/pcgamesn/2019/03/mount-and-blade-2-bannerlord-closed-beta.jpg)
