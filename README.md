@@ -1,9 +1,8 @@
 # Bannerlord Mod for Creating Batch Items
-
-![Bannerlord](https://i.redd.it/knctfjvce4q41.png)
-
 [![GitHub release](https://img.shields.io/github/v/release/yourusername/bannerlord-batch-mod)](https://github.com/yourusername/bannerlord-batch-mod/releases)
 [![License](https://img.shields.io/github/license/yourusername/bannerlord-batch-mod)](https://github.com/yourusername/bannerlord-batch-mod/blob/main/LICENSE)
+
+![Bannerlord](https://i.redd.it/knctfjvce4q41.png)
 
 ## 📜 Introduction
 I have always loved medieval-themed games, and *Mount & Blade: Warband* was the best game I have ever played in this genre. Its successor, *Mount & Blade: Bannerlord*, has quickly become one of my favorites. 
@@ -39,4 +38,5 @@ Pull requests are welcome! For major changes, please open an issue first to disc
 
 ---
 Stay tuned for updates and improvements! 🚀
+
 ![Bannerlord](https://www.pcgamesn.com/wp-content/sites/pcgamesn/2019/03/mount-and-blade-2-bannerlord-closed-beta.jpg)
