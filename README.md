@@ -30,9 +30,6 @@ To solve this issue, I researched mod development for the game and discovered th
 2. Extract the files into the `Modules` folder in your Bannerlord installation directory.
 3. Enable the mod in the game launcher.
 
-## 📜 License
-This project is licensed under the MIT License - see the [LICENSE](https://github.com/yourusername/bannerlord-batch-mod/blob/main/LICENSE) file for details.
-
 ## 🤝 Contributing
 Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
 
