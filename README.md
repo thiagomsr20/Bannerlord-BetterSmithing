@@ -23,7 +23,7 @@ To solve this issue, I researched mod development for the game and discovered th
 - ✅ **Batch crafting** of items
 - ✅ **Batch melting** of weapons
 - ✅ **Improved gameplay flow**
-- ✅ **No energy cost do Smithing**
+- ✅ **No energy cost to Smithing**
 
 ## 📥 Installation
 1. Download the latest release from the [Releases Page](https://github.com/yourusername/bannerlord-batch-mod/releases).
