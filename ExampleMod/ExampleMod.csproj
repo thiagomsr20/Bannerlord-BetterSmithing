@@ -207,9 +207,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Behavior\ManyMaterialsAtOnce.cs" />
     <Compile Include="Behavior\NoEnergyCostToSmithing.cs" />
     <Compile Include="MySubModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\RefinementCalculate.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
