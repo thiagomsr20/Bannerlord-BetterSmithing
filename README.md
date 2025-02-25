@@ -17,11 +17,14 @@ This problem made my gameplay frustrating, as my character played the role of a 
 ## 🛠️ The Solution
 To solve this issue, I researched mod development for the game and discovered that it uses my favorite language, **C#**. Motivated by this, I started learning how to create a mod and publish it on Steam, making my gameplay experience much smoother and more enjoyable.
 
+By Searching for how to create a mod, I learned a new .NET concept, Reflection, in simple terms, Reflection is the capability of an external program to read, write, and be understood by another program in runtime. So I implemented a lib called [Harmony](https://docs.bannerlordmodding.lt/modding/harmony/#patching-game-models), which allows me to read and override the implementations of all the methods called in the game.
+
 ---
 
 ## ✨ Features
-- ❌ **Batch crafting** of items (Working on)
-- ❌ **Batch melting** of weapons (Working on)
+- ❌ **Refine many** materials at once (Working on)
+- ❌ **Batch crafting** of items (todo)
+- ❌ **Batch melting** of weapons (todo)
 - ✅ **No energy cost to Smithing**
 
 ## 📥 Installation
