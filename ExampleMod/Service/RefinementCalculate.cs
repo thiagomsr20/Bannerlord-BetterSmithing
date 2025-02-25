@@ -6,11 +6,16 @@ using System.Threading.Tasks;
 
 namespace ExampleMod.Service
 {
-    internal static class RefinementCalculate
+    public static class RefinementCalculate
     {
-        public static int RefiningCount()
+        public static int ActionRefiningCount(int minimumResourceCountNeeded, int availableResourceCount)
         {
-            return 0;
+            if (availableResourceCount < minimumResourceCountNeeded)
+                return 0;
+
+            // TODO:
+
+            return availableResourceCount / minimumResourceCountNeeded;
         }
     }
 }
