@@ -20,8 +20,9 @@ To solve this issue, I researched mod development for the game and discovered th
 ---
 
 ## ✨ Features
-- ❌ **Batch crafting** of items (Working on)
-- ❌ **Batch melting** of weapons (Working on)
+- ❌ **Refine manye** materials at once (Working on)
+- ❌ **Batch crafting** of items (todo)
+- ❌ **Batch melting** of weapons (todo)
 - ✅ **No energy cost to Smithing**
 
 ## 📥 Installation
