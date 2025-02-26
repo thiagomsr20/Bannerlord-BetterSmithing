@@ -1,11 +1,10 @@
-﻿using ExampleMod.Service;
+﻿using ExampleMod.Getters;
+using ExampleMod.Service;
 using HarmonyLib;
 using System;
 using TaleWorlds.CampaignSystem;
-using TaleWorlds.CampaignSystem.Party;
-using TaleWorlds.CampaignSystem.ViewModelCollection.WeaponCrafting;
 using TaleWorlds.CampaignSystem.ViewModelCollection.WeaponCrafting.Refinement;
-using TaleWorlds.Library;
+using TaleWorlds.InputSystem;
 
 namespace ExampleMod.Behavior
 {
@@ -18,36 +17,28 @@ namespace ExampleMod.Behavior
             {
                 var refineFormula = __instance.CurrentSelectedAction.RefineFormula;
 
-
                 var craftingView = CraftingMaterialsCraftingVmGetter.CraftingVM;
-                foreach (var material in craftingView.PlayerCurrentMaterials)
-                {
-                    // TODO: Get the input materials count and avaiable materials count
-                }
+                var teste = craftingView.PlayerCurrentMaterials;
+                
+                // Get the input keys
+                bool ctrl_IsPressed = Input.IsKeyDown(InputKey.LeftControl) || Input.IsKeyDown(InputKey.RightControl);
+                bool shift_IsPressed = Input.IsKeyDown(InputKey.LeftShift) || Input.IsKeyDown(InputKey.RightShift);
 
-                int refinmentRepeats = 0;
+                int refinmentRepeats = 10;
+                
+                if (shift_IsPressed) // TODO: Validar se o Hero tem materiais o suficiente para executar essa tarefa
+                    refinmentRepeats = 5;
 
-                // If Shift + Click => 5 refinamentos (Se tiver os itens)
-                if (refinmentRepeats == 0)
-                    refinmentRepeats = RefinementCalculate.ActionRefiningCount(0, 0);
-
-                // If Ctrl + Click => Máximo de refinamentos (Com base no que tiver de receita no iventário)
-                else if (refinmentRepeats > 0)
+                else if (ctrl_IsPressed)
                     refinmentRepeats = RefinementCalculate.ActionRefiningCount(0, 0);
 
                 while (refinmentRepeats != 0)
                 {
-                    __instance.ExecuteSelectedRefinement(currentCraftingHero);
+                   // __instance.DoRefinement(currentCraftingHero);
                     refinmentRepeats--;
                 }
             }
-            return false; // Return FALSE to dont run the original method
+            return false;
         }
-    }
-    [HarmonyPatch(typeof(CraftingVM), "UpdateCurrentMaterialsAvailable")]
-    public static class CraftingMaterialsCraftingVmGetter
-    {
-        public static CraftingVM CraftingVM;
-        static void GetCraftingVM(CraftingVM __instance) => CraftingVM = __instance;
     }
 }
