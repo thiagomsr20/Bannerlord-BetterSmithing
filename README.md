@@ -24,7 +24,7 @@ By Searching for how to create a mod, I learned a new .NET concept, Reflection, 
 ## ✨ Features
 - ✅ **Refine many** materials at once
 - ❌ **Batch crafting** of items (todo)
-- ❌ **Batch melting** of weapons (todo)
+- ❌ **Batch melting** of weapons (working on)
 - ✅ **No energy cost to Smithing**
 
 ## 📥 Installation
@@ -36,6 +36,7 @@ By Searching for how to create a mod, I learned a new .NET concept, Reflection, 
 Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
 
 ---
-Stay tuned for updates and improvements! 🚀 Connect with me over [Steam](https://steamcommunity.com/profiles/76561198854122954/)
+Stay tuned for updates and improvements! 🚀
+Connect with me over [Steam](https://steamcommunity.com/profiles/76561198854122954/)
 
 ![Bannerlord](https://www.pcgamesn.com/wp-content/sites/pcgamesn/2019/03/mount-and-blade-2-bannerlord-closed-beta.jpg)
