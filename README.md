@@ -22,7 +22,7 @@ By Searching for how to create a mod, I learned a new .NET concept, Reflection, 
 ---
 
 ## ✨ Features
-- ❌ **Refine many** materials at once (Working on)
+- ✅ **Refine many** materials at once
 - ❌ **Batch crafting** of items (todo)
 - ❌ **Batch melting** of weapons (todo)
 - ✅ **No energy cost to Smithing**
