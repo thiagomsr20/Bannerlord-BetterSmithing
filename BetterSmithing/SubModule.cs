@@ -1,13 +1,13 @@
 ﻿using TaleWorlds.MountAndBlade;
 using TaleWorlds.CampaignSystem;
-using ExampleMod.Behavior;
+using BetterSmithing.Behavior;
 using TaleWorlds.Core;
 using HarmonyLib;
 using TaleWorlds.Library;
 
-namespace ExampleMod
+namespace BetterSmithing
 {
-    internal class MySubModule : MBSubModuleBase
+    internal class SubModule : MBSubModuleBase
     {
         public string ModName { get; private set; } = "BetterSmithing";
         protected override void OnSubModuleLoad()

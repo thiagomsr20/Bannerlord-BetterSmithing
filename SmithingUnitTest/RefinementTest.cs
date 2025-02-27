@@ -1,6 +1,4 @@
-﻿using ExampleMod.Service;
-using NUnit.Framework;
-using System.Collections.Generic;
+﻿using BetterSmithing.Service;
 
 namespace SmithingUnitTest
 {

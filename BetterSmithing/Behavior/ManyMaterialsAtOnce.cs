@@ -1,5 +1,5 @@
-﻿using ExampleMod.Getters;
-using ExampleMod.Service;
+﻿using BetterSmithing.Getters;
+using BetterSmithing.Service;
 using HarmonyLib;
 using System;
 using System.Linq;
@@ -8,7 +8,7 @@ using TaleWorlds.CampaignSystem.CampaignBehaviors;
 using TaleWorlds.CampaignSystem.ViewModelCollection.WeaponCrafting.Refinement;
 using TaleWorlds.InputSystem;
 
-namespace ExampleMod.Behavior
+namespace BetterSmithing.Behavior
 {
     [HarmonyPatch(typeof(RefinementVM), "ExecuteSelectedRefinement", new Type[] { typeof(Hero) })]
     public class ManyMaterialsAtOnce
@@ -50,8 +50,13 @@ namespace ExampleMod.Behavior
                     craftingBehavior.DoRefinement(currentCraftingHero, refineFormula);
                     refinmentRepeats--;
                 }
+
+                // Att the refinement list based on the avaiable materials.
+                __instance.RefreshRefinementActionsList(currentCraftingHero);
+                if (!__instance.CurrentSelectedAction.IsEnabled)
+                    __instance.CurrentSelectedAction = null;
             }
-            return false;
+            return false;  
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using HarmonyLib;
 using TaleWorlds.CampaignSystem.ViewModelCollection.WeaponCrafting;
 
-namespace ExampleMod.Getters
+namespace BetterSmithing.Getters
 {
     [HarmonyPatch(typeof(CraftingVM), "UpdateCurrentMaterialsAvailable")]
     public static class CraftingMaterialsCraftingVmGetter

@@ -4,7 +4,7 @@ using TaleWorlds.CampaignSystem.CampaignBehaviors;
 using TaleWorlds.CampaignSystem.GameComponents;
 using TaleWorlds.Core;
 
-namespace ExampleMod.Behavior
+namespace BetterSmithing.Behavior
 {
     [HarmonyPatch(typeof(CraftingCampaignBehavior))]
     internal class NoEnergyCostToSmithing : DefaultSmithingModel

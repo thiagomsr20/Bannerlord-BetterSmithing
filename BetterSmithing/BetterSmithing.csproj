@@ -7,8 +7,8 @@
     <ProjectGuid>{59CA1D13-DEE4-4E8B-9649-8EEC3B520556}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ExampleMod</RootNamespace>
-    <AssemblyName>ExampleMod</AssemblyName>
+    <RootNamespace>BetterSmithing</RootNamespace>
+    <AssemblyName>BetterSmithing</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -17,7 +17,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\..\..\..\..\..\Program Files %28x86%29\Steam\steamapps\common\Mount &amp; Blade II Bannerlord\Modules\ExampleMod\bin\Win64_Shipping_Client\</OutputPath>
+    <OutputPath>..\..\..\..\..\..\..\Program Files %28x86%29\Steam\steamapps\common\Mount &amp; Blade II Bannerlord\Modules\BetterSmithing\bin\Win64_Shipping_Client\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -216,7 +216,7 @@
     <Compile Include="Getters\CraftingViewModelGetter.cs" />
     <Compile Include="Behavior\ManyMaterialsAtOnce.cs" />
     <Compile Include="Behavior\NoEnergyCostToSmithing.cs" />
-    <Compile Include="MySubModule.cs" />
+    <Compile Include="SubModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\RefinementCalculate.cs" />
   </ItemGroup>
