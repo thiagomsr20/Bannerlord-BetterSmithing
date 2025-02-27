@@ -1,49 +1,60 @@
-using ExampleMod.Service;
+ï»¿using ExampleMod.Service;
+using NUnit.Framework;
+using System.Collections.Generic;
 
 namespace SmithingUnitTest
 {
     [TestFixture]
     public class RefinementTest
     {
-        public static IEnumerable<TestCaseData> GetTestCases()
+        // Testes para a versÃ£o com um Ãºnico recurso
+        public static IEnumerable<TestCaseData> GetSingleResourceTestCases()
         {
-            // Caso 1 -  2 madeiras necessárias, 4 madeiras disponíveis
-            // Com 4 madeiras, podemos fabricar 2 vezes
-            yield return new TestCaseData(2, 4, 2).SetName("TestCase 1 -  2 madeiras para 3 carvões, 4 madeiras disponíveis");
+            yield return new TestCaseData(2, 4, false, 2).SetName("2 madeiras necessÃ¡rias, 4 disponÃ­veis â†’ 2 itens");
+            yield return new TestCaseData(3, 5, false, 1).SetName("3 madeiras necessÃ¡rias, 5 disponÃ­veis â†’ 1 item");
+            yield return new TestCaseData(2, 1, false, 0).SetName("2 madeiras necessÃ¡rias, 1 disponÃ­vel â†’ 0 itens");
+            yield return new TestCaseData(1, 10, false, 10).SetName("1 madeira necessÃ¡ria, 10 disponÃ­veis â†’ 10 itens");
+            yield return new TestCaseData(5, 10, false, 2).SetName("5 madeiras necessÃ¡rias, 10 disponÃ­veis â†’ 2 itens");
+            yield return new TestCaseData(4, 9, false, 2).SetName("4 madeiras necessÃ¡rias, 9 disponÃ­veis â†’ 2 itens");
+            yield return new TestCaseData(2, 90, false, 45).SetName("2 madeiras necessÃ¡rias, 90 disponÃ­veis â†’ 45 itens");
 
-            // Caso 2 -  3 madeiras necessárias, 5 madeiras disponíveis
-            // Com 5 madeiras, podemos fabricar 1 vez (e sobra 2 madeiras)
-            yield return new TestCaseData(3, 5, 1).SetName("TestCase 2 -  3 madeiras para 3 carvões, 5 madeiras disponíveis");
-
-            // Caso 3 -  2 madeiras necessárias, 1 madeira disponível
-            // Com 1 madeira, não é possível fabricar nada
-            yield return new TestCaseData(2, 1, 0).SetName("TestCase 3 -  2 madeiras para 3 carvões, 1 madeira disponível");
-
-            // Caso 4 -  1 madeira necessária, 10 madeiras disponíveis
-            // Com 10 madeiras, podemos fabricar 10 vezes
-            yield return new TestCaseData(1, 10, 10).SetName("TestCase 4 -  1 madeira para 1 carvão, 10 madeiras disponíveis");
-
-            // Caso 5 -  5 madeiras necessárias, 10 madeiras disponíveis
-            // Com 10 madeiras, podemos fabricar 2 vezes
-            yield return new TestCaseData(5, 10, 2).SetName("TestCase 5 -  5 madeiras para 1 carvão, 10 madeiras disponíveis");
-
-            // Caso 6 -  4 madeiras necessárias, 9 madeiras disponíveis
-            // Com 9 madeiras, podemos fabricar 2 vezes (sobra 1 madeira)
-            yield return new TestCaseData(4, 9, 2).SetName("TestCase 6 -  4 madeiras para 1 carvão, 9 madeiras disponíveis");
-
-            // Caso 7 -  2 madeiras necessárias, 90 madeiras disponíveis
-            // Com 90 madeiras, podemos fabricar 45 vezes
-            yield return new TestCaseData(2, 90, 45).SetName("TestCase 7 - 2 madeiras para 1 carvão, 90 madeiras disponíveis");
+            // Testes com Shift pressionado
+            yield return new TestCaseData(2, 10, true, 5).SetName("Shift pressionado: 2 madeiras necessÃ¡rias, 10 disponÃ­veis â†’ 5 itens");
+            yield return new TestCaseData(2, 8, true, 4).SetName("Shift pressionado: 2 madeiras necessÃ¡rias, 8 disponÃ­veis â†’ 4 itens (nÃ£o atinge 5)");
+            yield return new TestCaseData(5, 30, true, 5).SetName("Shift pressionado: 5 madeiras necessÃ¡rias, 30 disponÃ­veis â†’ 5 itens");
         }
 
-        [TestCaseSource(nameof(GetTestCases))]
-        public void TestMethod(int minimumResourceCountNeeded, int availableResourceCount, int expectedRefiningCount)
+        [TestCaseSource(nameof(GetSingleResourceTestCases))]
+        public void Test_SingleResource_Refinement(int resource1_AmountNeeded, int resource1_AvaiableAmount, bool shift_IsPressed, int expectedCount)
         {
-            // Chama o método ActionRefiningCount passando os parâmetros
-            int result = RefinementCalculate.ActionRefiningCount(minimumResourceCountNeeded, availableResourceCount);
+            int result = RefinementCalculate.ActionRefiningCount(resource1_AmountNeeded, resource1_AvaiableAmount, shift_IsPressed);
+            Assert.AreEqual(expectedCount, result);
+        }
 
-            // Verifica se o valor retornado corresponde ao esperado
-            Assert.AreEqual(expectedRefiningCount, result);
+        // Testes para a versÃ£o com dois recursos
+        public static IEnumerable<TestCaseData> GetTwoResourceTestCases()
+        {
+            yield return new TestCaseData(2, 8, 4, 20, false, 4).SetName("2 madeiras / 4 ferros por item, 8 madeiras e 20 ferros disponÃ­veis â†’ 4 itens");
+            yield return new TestCaseData(2, 10, 3, 15, false, 5).SetName("2 madeiras / 3 ferros por item, 10 madeiras e 15 ferros disponÃ­veis â†’ 5 itens");
+            yield return new TestCaseData(3, 9, 2, 8, false, 3).SetName("3 madeiras / 2 ferros por item, 9 madeiras e 8 ferros disponÃ­veis â†’ 3 itens");
+            yield return new TestCaseData(4, 12, 6, 12, false, 2).SetName("4 madeiras / 6 ferros por item, 12 madeiras e 12 ferros disponÃ­veis â†’ 2 itens");
+            yield return new TestCaseData(5, 20, 5, 30, false, 4).SetName("5 madeiras / 5 ferros por item, 20 madeiras e 30 ferros disponÃ­veis â†’ 4 itens");
+
+            // Testes com Shift pressionado
+            yield return new TestCaseData(2, 20, 4, 20, true, 5).SetName("Shift pressionado: 2 madeiras / 4 ferros, 20 madeiras e 20 ferros disponÃ­veis â†’ 5 itens");
+            yield return new TestCaseData(2, 9, 4, 20, true, 4).SetName("Shift pressionado: 2 madeiras / 4 ferros, 9 madeiras e 20 ferros disponÃ­veis â†’ 4 itens");
+            yield return new TestCaseData(3, 15, 2, 9, true, 4).SetName("Shift pressionado: 3 madeiras / 2 ferros, 15 madeiras e 9 ferros disponÃ­veis â†’ 4 itens");
+        }
+
+        [TestCaseSource(nameof(GetTwoResourceTestCases))]
+        public void Test_TwoResource_Refinement(int resource1_AmountNeeded, int resource1_AvaiableAmount,
+                                                 int resource2_AmountNeeded, int resource2_AvaiableAmount,
+                                                 bool shift_IsPressed, int expectedCount)
+        {
+            int result = RefinementCalculate.ActionRefiningCount(resource1_AmountNeeded, resource1_AvaiableAmount,
+                                                                 resource2_AmountNeeded, resource2_AvaiableAmount,
+                                                                 shift_IsPressed);
+            Assert.AreEqual(expectedCount, result);
         }
     }
 }

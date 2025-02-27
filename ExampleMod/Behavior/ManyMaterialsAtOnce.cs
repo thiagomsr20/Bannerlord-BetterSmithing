@@ -2,7 +2,9 @@
 using ExampleMod.Service;
 using HarmonyLib;
 using System;
+using System.Linq;
 using TaleWorlds.CampaignSystem;
+using TaleWorlds.CampaignSystem.CampaignBehaviors;
 using TaleWorlds.CampaignSystem.ViewModelCollection.WeaponCrafting.Refinement;
 using TaleWorlds.InputSystem;
 
@@ -15,26 +17,37 @@ namespace ExampleMod.Behavior
         {
             if (__instance.CurrentSelectedAction != null)
             {
-                var refineFormula = __instance.CurrentSelectedAction.RefineFormula;
-
-                var craftingView = CraftingMaterialsCraftingVmGetter.CraftingVM;
-                var teste = craftingView.PlayerCurrentMaterials;
-                
-                // Get the input keys
                 bool ctrl_IsPressed = Input.IsKeyDown(InputKey.LeftControl) || Input.IsKeyDown(InputKey.RightControl);
                 bool shift_IsPressed = Input.IsKeyDown(InputKey.LeftShift) || Input.IsKeyDown(InputKey.RightShift);
 
-                int refinmentRepeats = 10;
-                
-                if (shift_IsPressed) // TODO: Validar se o Hero tem materiais o suficiente para executar essa tarefa
-                    refinmentRepeats = 5;
+                int refinmentRepeats = 0;
+                var refineFormula = __instance.CurrentSelectedAction.RefineFormula;
 
-                else if (ctrl_IsPressed)
-                    refinmentRepeats = RefinementCalculate.ActionRefiningCount(0, 0);
+                if (!ctrl_IsPressed && !shift_IsPressed)
+                {
+                    refinmentRepeats = 1;
+                }
+                else
+                {
+                    var heroIventory = CraftingMaterialsCraftingVmGetter.CraftingVM.PlayerCurrentMaterials;
 
+                    int input1_AvaiableInHeroInventory = heroIventory.First(mtrl => mtrl.ResourceMaterial == refineFormula.Input1).ResourceAmount;
+                    int input2_AvaiableInHeroInventory = heroIventory.First(mtrl => mtrl.ResourceMaterial == refineFormula.Input2).ResourceAmount;
+
+                    if (refineFormula.Input2Count != 0) // If refinement needs more than one input to make
+                    {
+                        refinmentRepeats = RefinementCalculate.ActionRefiningCount(refineFormula.Input1Count, input1_AvaiableInHeroInventory,
+                                                                                       refineFormula.Input2Count, input2_AvaiableInHeroInventory,
+                                                                                       shift_IsPressed);
+                    }
+                    else
+                        refinmentRepeats = RefinementCalculate.ActionRefiningCount(refineFormula.Input1Count, input1_AvaiableInHeroInventory, shift_IsPressed);
+                }
+
+                var craftingBehavior = Campaign.Current.GetCampaignBehavior<ICraftingCampaignBehavior>();
                 while (refinmentRepeats != 0)
                 {
-                   // __instance.DoRefinement(currentCraftingHero);
+                    craftingBehavior.DoRefinement(currentCraftingHero, refineFormula);
                     refinmentRepeats--;
                 }
             }

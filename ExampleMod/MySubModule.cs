@@ -31,7 +31,6 @@ namespace ExampleMod
                 gameStarterObject.AddModel(new NoEnergyCostToSmithing());
                 InformationManager.DisplayMessage(new InformationMessage("BetterSmithing is loaded!"));
             }
-                
         }
     }
 }

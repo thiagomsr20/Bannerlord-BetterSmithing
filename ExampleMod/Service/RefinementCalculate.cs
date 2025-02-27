@@ -8,14 +8,30 @@ namespace ExampleMod.Service
 {
     public static class RefinementCalculate
     {
-        public static int ActionRefiningCount(int minimumResourceCountNeeded, int availableResourceCount)
+        public static int ActionRefiningCount(int resource1_AmountNeeded, int resource1_AvaiableAmount, bool shift_IsPressed)
         {
-            if (availableResourceCount < minimumResourceCountNeeded)
-                return 0;
+            if (shift_IsPressed)
+            {
+                bool canMakeFive = resource1_AvaiableAmount >= (resource1_AmountNeeded * 5);
+                if ( canMakeFive)
+                    return 5;
+            }
 
-            // TODO:
+            return resource1_AvaiableAmount / resource1_AmountNeeded;
+        }
+        public static int ActionRefiningCount(int resource1_AmountNeeded, int resource1_AvaiableAmount, int resource2_AmountNeeded, int resource2_AvaiableAmount, bool shift_IsPressed)
+        {
+            if (shift_IsPressed)
+            {
+                bool canMakeFive = resource1_AvaiableAmount >= (resource1_AmountNeeded * 5) 
+                                    && resource2_AvaiableAmount >= (resource2_AmountNeeded * 5);
 
-            return availableResourceCount / minimumResourceCountNeeded;
+                if (canMakeFive)
+                    return 5;
+            }
+
+            return Math.Min(resource1_AvaiableAmount / resource1_AmountNeeded, 
+                                resource2_AvaiableAmount / resource2_AmountNeeded);
         }
     }
 }
