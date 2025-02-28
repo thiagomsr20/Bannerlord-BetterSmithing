@@ -47,7 +47,7 @@ namespace BetterSmithing.Behavior
                 var craftingBehavior = Campaign.Current.GetCampaignBehavior<ICraftingCampaignBehavior>();
                 while (refinmentRepeats != 0)
                 {
-                    craftingBehavior.DoRefinement(currentCraftingHero, refineFormula); // TODO: https://github.com/thiagomsr20/Bannerlord-BetterSmithing/issues/2
+                    craftingBehavior.DoRefinement(currentCraftingHero, refineFormula);
                     refinmentRepeats--;
                 }
 
