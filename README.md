@@ -1,5 +1,5 @@
 # Bannerlord Mod for Better Smithing
-[![GitHub release](https://img.shields.io/github/v/release/thiagomsr20/Bannerlord-BetterSmithing)](https://github.com/thiagomsr20/Bannerlord-BetterSmithing/releases)
+[![GitHub release](https://img.shields.io/github/v/release/thiagomsr20/Bannerlord-BetterSmithing)](https://github.com/thiagomsr20/Bannerlord-BetterSmithing/releases/tag/v1.1.15)
 [![License](https://img.shields.io/github/license/thiagomsr20/Bannerlord-BetterSmithing)](https://github.com/thiagomsr20/Bannerlord-BetterSmithing/blob/main/LICENSE)
 
 ![Bannerlord](https://i.redd.it/knctfjvce4q41.png)
