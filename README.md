@@ -32,6 +32,8 @@ By Searching for how to create a mod, I learned a new .NET concept, Reflection, 
 2. Extract the files into the `Modules` folder in your Bannerlord installation directory.
 3. Enable the mod in the game launcher.
 
+   Or you can subscribe at the steam [Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=3435494593). 
+
 ## 🤝 Contributing
 Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
 
