@@ -52,9 +52,7 @@ namespace BetterSmithing.Behavior
                 }
 
                 // Att the refinement list based on the avaiable materials.
-                __instance.RefreshRefinementActionsList(currentCraftingHero); // TODO: https://github.com/thiagomsr20/Bannerlord-BetterSmithing/issues/1
-                if (!__instance.CurrentSelectedAction.IsEnabled)
-                    __instance.CurrentSelectedAction = null;
+                __instance.RefreshRefinementActionsList(currentCraftingHero);
             }
             return false;  
         }
