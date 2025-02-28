@@ -1,0 +1,15 @@
+<Tasks>
+    <CreateItem/>
+    <UpdateItem>
+        <ModuleFolder Value="C:\Program Files (x86)\Steam\steamapps\common\Mount &amp; Blade II Bannerlord\Modules\BetterSmithing"/>
+        <ItemDescription Value="testeeeeeeeeeeee"/>
+        <Tags> 
+            <Tag Value="Utility" />
+            <Tag Value="Native" />
+            <Tag Value="Singleplayer" />
+            <Tag Value="v1.2.12" />
+        </Tags>
+        <Image Value="C:\Users\Thiago\source\repos\thiagomsr20\Bannerlord-BetterSmithing\static files\Workshop publish photo.jpg"/>
+        <Visibility Value="Public"/>
+    </UpdateItem>
+</Tasks>

@@ -36,23 +36,24 @@ namespace BetterSmithing.Behavior
 
                     if (refineFormula.Input2Count != 0) // If refinement needs more than one input to make
                     {
-                        refinmentRepeats = RefinementCalculate.ActionRefiningCount(refineFormula.Input1Count, input1_AvaiableInHeroInventory,
+                        refinmentRepeats = ManyAtOnceCalculate.ActionRefiningCount(refineFormula.Input1Count, input1_AvaiableInHeroInventory,
                                                                                        refineFormula.Input2Count, input2_AvaiableInHeroInventory,
                                                                                        shift_IsPressed);
                     }
                     else
-                        refinmentRepeats = RefinementCalculate.ActionRefiningCount(refineFormula.Input1Count, input1_AvaiableInHeroInventory, shift_IsPressed);
+                        refinmentRepeats = ManyAtOnceCalculate.ActionRefiningCount(refineFormula.Input1Count, input1_AvaiableInHeroInventory, shift_IsPressed);
                 }
 
                 var craftingBehavior = Campaign.Current.GetCampaignBehavior<ICraftingCampaignBehavior>();
                 while (refinmentRepeats != 0)
                 {
-                    craftingBehavior.DoRefinement(currentCraftingHero, refineFormula);
+                    craftingBehavior.DoRefinement(currentCraftingHero, refineFormula); // TODO: https://github.com/thiagomsr20/Bannerlord-BetterSmithing/issues/2
                     refinmentRepeats--;
                 }
 
                 // Att the refinement list based on the avaiable materials.
                 __instance.RefreshRefinementActionsList(currentCraftingHero);
+                
             }
             return false;  
         }

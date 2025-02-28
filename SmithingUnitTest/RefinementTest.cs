@@ -25,7 +25,7 @@ namespace SmithingUnitTest
         [TestCaseSource(nameof(GetSingleResourceTestCases))]
         public void Test_SingleResource_Refinement(int resource1_AmountNeeded, int resource1_AvaiableAmount, bool shift_IsPressed, int expectedCount)
         {
-            int result = RefinementCalculate.ActionRefiningCount(resource1_AmountNeeded, resource1_AvaiableAmount, shift_IsPressed);
+            int result = ManyAtOnceCalculate.ActionRefiningCount(resource1_AmountNeeded, resource1_AvaiableAmount, shift_IsPressed);
             Assert.AreEqual(expectedCount, result);
         }
 
@@ -49,7 +49,7 @@ namespace SmithingUnitTest
                                                  int resource2_AmountNeeded, int resource2_AvaiableAmount,
                                                  bool shift_IsPressed, int expectedCount)
         {
-            int result = RefinementCalculate.ActionRefiningCount(resource1_AmountNeeded, resource1_AvaiableAmount,
+            int result = ManyAtOnceCalculate.ActionRefiningCount(resource1_AmountNeeded, resource1_AvaiableAmount,
                                                                  resource2_AmountNeeded, resource2_AvaiableAmount,
                                                                  shift_IsPressed);
             Assert.AreEqual(expectedCount, result);
