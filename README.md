@@ -39,6 +39,5 @@ Pull requests are welcome! For major changes, please open an issue first to disc
 
 ---
 Stay tuned for updates and improvements! 🚀
-Connect with me over [Steam](https://steamcommunity.com/profiles/76561198854122954/)
 
 ![Bannerlord](https://www.pcgamesn.com/wp-content/sites/pcgamesn/2019/03/mount-and-blade-2-bannerlord-closed-beta.jpg)
